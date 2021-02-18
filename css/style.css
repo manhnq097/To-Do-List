@@ -1,0 +1,41 @@
+a {
+    text-decoration: none;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+#app {
+    min-width: 400px;
+}
+.list-work {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.list-work li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 4px;
+    padding: 10px;
+}
+.list-work li:not(:first-child) {
+    margin-top: 10px;
+}
+.list-work li:nth-child(odd){
+    background-color: green;
+}
+.list-work li:nth-child(even){
+    background-color: blue;
+}
+.btn-delete {
+    color: red;
+}
+.action-add a {
+    display: inline-block;
+    background: #000000;
+    color: #FFFFFF;
+    border-radius: 4px;
+    padding: 10px;
+}
