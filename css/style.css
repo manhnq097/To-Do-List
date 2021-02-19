@@ -5,9 +5,10 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    font-family: sans-serif;
 }
 #app {
-    min-width: 400px;
+    width: 600px;
 }
 .list-work {
     padding-top: 20px;
@@ -19,18 +20,19 @@ body {
     justify-content: space-between;
     border-radius: 4px;
     padding: 10px;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, .8);
+}
+.list-work li span {
+    word-break: break-word;
 }
 .list-work li:not(:first-child) {
     margin-top: 10px;
 }
-.list-work li:nth-child(odd){
-    background-color: green;
-}
-.list-work li:nth-child(even){
-    background-color: blue;
-}
 .btn-delete {
-    color: red;
+    color: #FFFFFF;
+    flex-basis: 20%;
+    text-align: right;
 }
 .action-add a {
     display: inline-block;
@@ -38,4 +40,28 @@ body {
     color: #FFFFFF;
     border-radius: 4px;
     padding: 10px;
+}
+#alert {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+    min-width: 200px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    opacity: 0;
+    transition: .5s;
+}
+#alert.active {
+    opacity: 1;
+}
+#alert.success {
+    background: rgba(23, 189, 87, 0.8);
+}
+#alert.fail {
+    background: rgba(202, 25, 13, 0.8);
 }
