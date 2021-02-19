@@ -5,9 +5,7 @@ let deleteBtnElement = document.querySelector('.btn-delete');
 let alertSection = document.querySelector('#alert');
 let status;
 document.addEventListener('DOMContentLoaded', () => {
-    if(listWork.length == 0) {
-        listWorkElement.innerText = "Chưa có công việc"
-    }
+    if(listWork.length == 0) {listWorkElement.innerText = "Chưa có công việc"}
     addBtnElement.addEventListener('click', () => {
         let valueInputElement = document.querySelector('.action-add input').value;
         if(valueInputElement != '') {

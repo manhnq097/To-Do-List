@@ -1,3 +1,7 @@
+:root {
+    --brand-primary: #479ee0;
+}
+
 a {
     text-decoration: none;
 }
@@ -5,41 +9,83 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: sans-serif;
 }
 #app {
-    width: 600px;
-}
-.list-work {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-.list-work li {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     justify-content: space-between;
+    width: 450px;
+    height: 500px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, .8);
+    border-radius: 6px;
+}
+#app .heading h1 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--brand-primary);
+}
+#app .body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#app .body .list-work li {
+    position: relative;
+}
+#app .body .list-work li label {
+    display: block;
     border-radius: 4px;
     padding: 10px;
-    color: #FFFFFF;
-    background: rgba(0, 0, 0, .8);
+    border: 1px solid rgba(0, 0, 0, .8);
+    cursor: pointer;
 }
-.list-work li span {
+#app .body .list-work li label:hover {
+    opacity: .8;
+}
+#app .body .list-work li span {
     word-break: break-word;
 }
-.list-work li:not(:first-child) {
+#app .body .list-work li:not(:first-child) {
     margin-top: 10px;
 }
-.btn-delete {
-    color: #FFFFFF;
+#app .body .list-work .btn-delete {
+    color: #000000;
     flex-basis: 20%;
     text-align: right;
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
 }
-.action-add a {
+#app .body .list-work .btn-delete:hover {
+    color: #ff0000;
+}
+
+#app .body .action-add {
+    display: flex;
+}
+#app .body .action-add input {
+    padding: 12px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .8);
+    flex-grow: 1;
+}
+#app .body .action-add a {
     display: inline-block;
-    background: #000000;
+    background: var(--brand-primary);
     color: #FFFFFF;
     border-radius: 4px;
-    padding: 10px;
+    padding: 12px 24px;
+    margin-left: 10px;
 }
 #alert {
     position: fixed;
