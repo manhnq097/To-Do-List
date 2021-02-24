@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-alertFunction () => {
+const alertFunction = () => {
     alertSection.classList.add('active');
     if (status == 1) {
         alertSection.innerText = 'Thêm thành công';
