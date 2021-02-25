@@ -7,22 +7,17 @@ let status;
 document.addEventListener('DOMContentLoaded', () => {
     addBtnElement.addEventListener('click', () => {
         let valueInputElement = document.querySelector('.action-add input').value;
-        if(valueInputElement != '') {
-            status = 1;
-            alertFunction();
-            listWork.push(valueInputElement);
+        listWork.push(valueInputElement);
+        listWork.map(function(value, index) {
             listWorkElement.innerHTML +=
                 `<li>
                     <label>
                         <input type="checkbox">
-                        <span>${valueInputElement}</span>
+                        <span>${value}</span>
                     </label>
                     <a href="javascript:;" class="btn-delete" title="Xoá"><i class="far fa-times-circle"></i></a>
                 </li>`;
-        }else {
-            status = 0;
-            alertFunction();
-        };
+        });
     });
 });
 
