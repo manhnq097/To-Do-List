@@ -21,6 +21,7 @@ body {
     font-family: sans-serif;
     background: #f8f8fb;
     font-family: GoogleSans-Regular;
+    background-image: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
 }
 #app {
     display: flex;
@@ -47,7 +48,6 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 #app .body .list-work li {
     position: relative;
@@ -57,14 +57,14 @@ body {
     border-radius: 6px;
     padding: 10px;
     cursor: pointer;
-    color: #FFFFFF;
-    background: #76ccf8;
+    background: #F2F2F2;
 }
 #app .body .list-work li label:hover {
     opacity: .8;
 }
 #app .body .list-work li span {
     word-break: break-word;
+    font-family: GoogleSans-Bold;
 }
 #app .body .list-work li:not(:first-child) {
     margin-top: 10px;
@@ -81,21 +81,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 14px;
+    padding-right: 14px;
     border-radius: 0 6px 6px 0;
 }
 
 #app .body .action-add {
     display: flex;
+    margin-bottom: 20px;
 }
 #app .body .action-add input {
-    padding: 12px 24px;
-    border-radius: 6px 0 0 6px;
+    padding: 12px;
+    border-radius: 4px;
     outline: none;
-    border: none;
+    border: 1px solid #EEEEEE;
     flex-grow: 1;
-    background: #f3f3f3;
     font-family: GoogleSans-Bold;
     color: #989898
 }
@@ -103,11 +103,12 @@ body {
     color: #989898
 }
 #app .body .action-add a {
+    margin-left: 5px;
     display: inline-block;
     background: var(--brand-primary);
     color: #FFFFFF;
-    border-radius: 0 6px 6px 0;
-    padding: 12px 24px;
+    border-radius: 4px;
+    padding: 12px 16px;
     font-family: GoogleSans-Bold;
 }
 #alert {
