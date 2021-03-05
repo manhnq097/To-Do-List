@@ -1,10 +1,11 @@
-    let listWork = [];
-    let objectNew = {};
-    let listWorkElement = document.querySelector('.list-work');
-    let addBtnElement = document.querySelector('.action-add a');
-    let deleteBtnElement = document.querySelector('.btn-delete');
-    let alertSection = document.querySelector('#alert');
-    let status;
+let listWork = [];
+let objectNew = {};
+let listWorkElement = document.querySelector('.list-work');
+let addBtnElement = document.querySelector('.action-add a');
+let deleteBtnElement = document.querySelector('.btn-delete');
+let alertSection = document.querySelector('#alert');
+let status;
+
 document.addEventListener('DOMContentLoaded', () => {
     addBtnElement.addEventListener('click', () => {
         addItem();
@@ -12,10 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.clear();
         console.log(listWork);
     });
-
-    successNotiFun();
-    errorNotiFun();
-    notiFyNotiFun();
 });
 
 
@@ -26,7 +23,9 @@ function addItem() {
         objectNew.id = randomId();
         objectNew.title = valueInputElement;
         listWork.push(objectNew);
+        notification('success', 'Thành công');
     }else {
+        notification('error', 'Thất bại');
     }
 };
 
