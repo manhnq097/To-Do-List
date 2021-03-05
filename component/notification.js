@@ -3,12 +3,13 @@ let notificationPlace = document.createElement('ul');
 notificationPlace.classList.add('notificaton-place');
 bodyElement.appendChild(notificationPlace);
 notificationPlace.style.position = 'fixed';
-notificationPlace.style.top = '20px';
-notificationPlace.style.right = '20px';
+notificationPlace.style.top = '10px';
+notificationPlace.style.right = '10px';
 notificationPlace.style.zIndex = '9999';
 
 let notification = (status ,notiText) => {
     let liElement = document.createElement('li');
+    liElement.style.opacity = '0';
     liElement.style.boxSizing = 'border-box';
     liElement.style.padding = '12px 20px';
     liElement.style.marginBottom = '5px';
@@ -16,7 +17,9 @@ let notification = (status ,notiText) => {
     liElement.style.minHeight = '60px';
     liElement.style.color = '#FFFFFF';
     liElement.style.width = '300px';
-    liElement.style.boxShadow = 'rgb(0 0 0 / 40%) 2px 2px 4px';
+    liElement.style.boxShadow = 'rgb(0 0 0 / 60%) 2px 2px 8px';
+    liElement.style.transform = 'translate(0, 20px)';
+    liElement.style.transition = '.5s';
     notificationPlace.appendChild(liElement);
     let divElementTop = document.createElement('div');
     divElementTop.classList.add('alert-heading');
@@ -44,4 +47,15 @@ let notification = (status ,notiText) => {
             divElementBottom.innerText = notiText;
         }
     }
+    setTimeout(function() {
+        liElement.style.opacity = '1';
+        liElement.style.transform = 'translate(0, 0)';
+    })
+    setTimeout(function() {
+        liElement.style.opacity = '0';
+        liElement.style.transform = 'translate(300px, 0)';
+    }, 3000)
+    setTimeout(function() {
+        liElement.remove();
+    }, 3500)
 }

@@ -23,9 +23,9 @@ function addItem() {
         objectNew.id = randomId();
         objectNew.title = valueInputElement;
         listWork.push(objectNew);
-        notification('success', 'Thành công');
+        notification('success', 'Thêm thành công');
     }else {
-        notification('error', 'Thất bại');
+        notification('error', 'Thêm thất bại');
     }
 };
 
