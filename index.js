@@ -1,18 +1,27 @@
-let listWork = [];
+let listWork = [
+    {
+        id: "7b58a59d-eb47-24a4-63a9-bb8596fa7260",
+        title: "Code"
+    },
+    {
+        id: "7b58a59d-eb47-24a4-63a9-b345",
+        title: "Code and code"
+    },
+    ];
 let objectNew = {};
 let listWorkElement = document.querySelector('.list-work');
 let addBtnElement = document.querySelector('.action-add a');
 let deleteBtnElement = document.querySelector('.btn-delete');
-let alertSection = document.querySelector('#alert');
-let status;
 
 document.addEventListener('DOMContentLoaded', () => {
+    renderItem();
     addBtnElement.addEventListener('click', () => {
         addItem();
         renderItem();
         console.clear();
         console.log(listWork);
     });
+    showPopup();
 });
 
 
@@ -23,15 +32,14 @@ function addItem() {
         objectNew.id = randomId();
         objectNew.title = valueInputElement;
         listWork.push(objectNew);
-        notification('success', 'Thêm thành công');
     }else {
-        notification('error', 'Thêm thất bại');
     }
 };
 
-function removeItem(id) {
-    const index = listWork.indexOf(id);
-    listWork.splice(index, 1);
+function removeItem() {
+    const itemRemove = listWork.find(item => item.id === id);
+    const indexRemove = listWork.findIndex(item => item.id === id)
+    console.log(indexRemove);
     renderItem();
 };
 

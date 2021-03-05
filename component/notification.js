@@ -7,7 +7,7 @@ notificationPlace.style.top = '10px';
 notificationPlace.style.right = '10px';
 notificationPlace.style.zIndex = '9999';
 
-let notification = (status ,notiText) => {
+let iNotification = (status ,notiText) => {
     let liElement = document.createElement('li');
     liElement.style.opacity = '0';
     liElement.style.boxSizing = 'border-box';
