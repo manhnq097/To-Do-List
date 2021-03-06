@@ -19,18 +19,21 @@ let iNotification = (status ,notiText) => {
     liElement.style.width = '300px';
     liElement.style.boxShadow = 'rgb(0 0 0 / 60%) 2px 2px 8px';
     liElement.style.transform = 'translate(0, 20px)';
+    liElement.style.textAlign = 'center';
     liElement.style.transition = '.5s';
     notificationPlace.appendChild(liElement);
     let divElementTop = document.createElement('div');
     divElementTop.classList.add('alert-heading');
     divElementTop.style.paddingBottom = '10px';
+    divElementTop.style.fontSize = '32px';
+    divElementTop.style.color = '#FFFFFF';
     liElement.appendChild(divElementTop);
     let divElementBottom = document.createElement('div');
     divElementBottom.classList.add('alert-content');
     liElement.appendChild(divElementBottom);
     if(status && status == 'success') {
         liElement.classList.add('success-notification');
-        divElementTop.innerText = "Success Notification";
+        divElementTop.innerHTML = `<i class="fas fa-check"></i>`;
         liElement.style.background = '#60d691';
         if(!notiText || notiText.length == 0) {
             divElementBottom.innerText = 'This is a success notification';
@@ -39,7 +42,7 @@ let iNotification = (status ,notiText) => {
         }
     }else if(status && status == 'error') {
         liElement.classList.add('error-notification');
-        divElementTop.innerText = "Error Notification";
+        divElementTop.innerHTML = `<i class="fas fa-times"></i>`;
         liElement.style.background = 'red';
         if(!notiText || notiText.length == 0) {
             divElementBottom.innerText = 'This is an error notification';

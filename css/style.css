@@ -7,48 +7,88 @@
     src: url(/fonts/GoogleSans-Bold.ttf);
 }
 :root {
-    --brand-primary: #4a91f6;
+    --brand-primary: #5A95FF;
+    --delete-primary: #FF5C5C;
 }
 
 a {
     text-decoration: none;
 }
+
 body {
     font-family: GoogleSans-Regular;
-}
-#app {
-    width: 100%;
+    background-image: linear-gradient(to right, #68EACC 0%, #497BE8 100%);
     height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+    background: #FFFFFF;
+    width: 400px;
+    height: 600px;
     overflow: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px;
-    background-image: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 60%) 2px 2px 8px;
 }
+
 #app .heading {
-    margin-bottom: 20px;
+    padding: 14px 20px;
+    background: var(--brand-primary);
 }
+
 #app .heading h1 {
     font-size: 18px;
     line-height: 18px;
     font-family: GoogleSans-Bold;
     text-transform: uppercase;
-    color: var(--brand-primary);
+    color: #FFFFFF;
+    text-align: center;
 }
+
 #app .body {
+    padding: 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow-y: scroll;
+}
+/* width */
+#app .body::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Track */
+#app .body::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+#app .body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .5); 
+  }
+  
+  /* Handle on hover */
+#app .body::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+#app .body .list-work {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 #app .body .list-work li {
     position: relative;
 }
 #app .body .list-work li label {
     display: block;
-    padding: 20px 10px;
+    padding: 10px 0;
     cursor: pointer;
-    background: #F2F2F2;
 }
 #app .body .list-work li label:hover {
     opacity: .8;
@@ -57,44 +97,73 @@ body {
     word-break: break-word;
     font-family: GoogleSans-Bold;
 }
-#app .body .list-work li:not(:first-child) {
-    border-top: 1px solid #DDDDDD;
+#app .body .list-work li:not(:first-child) label {
+    border-top: 1px solid #E6E6E6;
 }
 #app .body .list-work .btn-delete {
-    color: #FFFFFF;
+    color: #d9534f;
     flex-basis: 20%;
     position: absolute;
     z-index: 9;
     top: 0;
     bottom: 0;
     right: 0;
-    background: #d9534f;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-left: 14px;
     padding-right: 14px;
 }
+#app .body .list-work .btn-delete:hover {
+    opacity: .8;
+}
 
 #app .body .action-add {
     display: flex;
-    margin-bottom: 20px;
 }
 #app .body .action-add input {
-    padding: 12px;
+    padding: 12px 10px;
     outline: none;
-    border: 1px solid #EEEEEE;
+    border: none;
     flex-grow: 1;
-    font-family: GoogleSans-Bold;
+    font-family: GoogleSans-Regular;
     color: #989898
 }
 #app .body .action-add input::placeholder {
-    color: #989898
+    color: #cecece;
 }
-#app .body .action-add a {
+#app .body .action-add button[type=submit] {
+    cursor: pointer;
     display: inline-block;
     background: var(--brand-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     color: #FFFFFF;
-    padding: 12px 16px;
     font-family: GoogleSans-Bold;
+    border: none;
+    outline: none;
+    position: absolute;
+    z-index: 999;
+    bottom: 20px;
+    right: 20px;
 }
+#app .body .clear-all-btn {
+    cursor: pointer;
+    display: inline-block;
+    background: var(--delete-primary);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-family: GoogleSans-Bold;
+    border: none;
+    outline: none;
+    position: absolute;
+    z-index: 999;
+    bottom: 20px;
+    left: 20px;
+}
+

@@ -12,17 +12,19 @@
 <body>
     <div id="app">
         <div class="heading">
-            <h1>Todo App</h1>
+            <h1>Công việc</h1>
         </div>
         <div class="body">
-            <div class="action-add">
-                <input type="text" name="" placeholder="Add new work">
-                <a href="javascript:;"><i class="fas fa-plus"></i></a>
-            </div>
+            <form class="action-add" name="formWork">
+                <button type="submit" title="Thêm công việc"><i class="fas fa-plus"></i></button>
+                <input type="text" placeholder="Nhập công việc" name="workName"/>
+            </form>
             <ul class="list-work"></ul>
+            <a href="javascript:;" class="clear-all-btn" title="Xoá tất cả" onclick="clearAll();"><i class="fas fa-broom"></i></a>
         </div>
     </div>
     <script src="./component/getWidthHeight.js"></script>
+    <script src="./component/notification.js"></script>
     <script src="./component/popup.js"></script>
     <script src="./index.js"></script>
 </body>
