@@ -132,12 +132,14 @@ body {
 #app .body .action-add input::placeholder {
     color: #cecece;
 }
-#app .body .action-add button[type=submit] {
+#app .body .action-add .btn-add {
     cursor: pointer;
     display: inline-block;
     background: var(--brand-primary);
     width: 40px;
     height: 40px;
+    line-height: 40px;
+    text-align: center;
     border-radius: 50%;
     color: #FFFFFF;
     font-family: GoogleSans-Bold;

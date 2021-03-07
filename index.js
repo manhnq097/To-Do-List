@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 const addItem = () => {
     let valueInputElement = document.querySelector('.action-add input').value;
     if(valueInputElement != '') {
