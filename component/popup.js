@@ -1,4 +1,4 @@
-function showPopup() {
+function showPopup(file) {
     let iPopupElement = document.createElement('div');
     iPopupElement.classList.add('i-popup');
     iPopupElement.style.padding = '20px';
@@ -35,5 +35,6 @@ function showPopup() {
         bodyElement.removeChild(iPopupElement);
         bodyElement.removeChild(iPopupPseudoElement);
     })
-}
 
+    iPopupElement.innerHTML = `<iframe src="${file}"></iframe>`;
+}

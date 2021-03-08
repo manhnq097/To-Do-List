@@ -7,13 +7,13 @@ let deleteBtnElement = document.querySelector('.btn-delete');
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.forms["formWork"];
     renderItem();
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        addItem();
-        renderItem();
-        console.clear();
-        console.log(listWork);
-    });
+    // form.addEventListener('submit', function(e) {
+    //     e.preventDefault();
+    //     addItem();
+    //     renderItem();
+    //     console.clear();
+    //     console.log(listWork);
+    // });
 });
 
 const addItem = () => {
