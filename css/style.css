@@ -8,50 +8,34 @@
 }
 :root {
     --brand-primary: #5A95FF;
-    --delete-primary: #FF5C5C;
 }
 a {
     text-decoration: none;
 }
 body {
     font-family: GoogleSans-Regular;
-    background-image: linear-gradient(to right, #68EACC 0%, #497BE8 100%);
     width: 100%;
-}
-.btn {
-    padding: 10px 12px;
-    border-radius: 4px;
 }
 .form-add {
     padding: 10px 0;
 }
-.table {
-    padding: 10px 0;
-}
-.form-control {
-    padding: 8px 12px;
-    border-radius: 4px;
-    width: 100%;
-    outline: red;
-    border: 1px solid #DDDDDD;
-}
-.form-group >*:not(:first-child) {
-    margin-top: 10px;
-}
 #app {
     background: #FFFFFF;
-    width: 100%;
     height: 100vh;
     overflow: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: rgb(0 0 0 / 60%) 2px 2px 8px;
 }
-
 #app .heading {
     padding: 14px 20px;
     background: var(--brand-primary);
+}
+#app .body {
+    flex-grow: 1;
+}
+#app .body .row {
+    height: 100%;
 }
 
 #app .heading h1 {
@@ -61,15 +45,6 @@ body {
     text-transform: uppercase;
     color: #FFFFFF;
     text-align: center;
-}
-
-#app .body {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow-y: scroll;
 }
 /* width */
 #app .body::-webkit-scrollbar {
@@ -91,8 +66,13 @@ body {
     background: #555; 
   }
 #app .body .list-work {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 40px;
+    background-image: url(../images/bg-work.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
 }
 #app .body .list-work li {
     position: relative;
@@ -107,21 +87,12 @@ body {
 }
 #app .body .list-work li span {
     word-break: break-word;
-    font-family: GoogleSans-Bold;
 }
 #app .body .list-work li:not(:first-child) label {
     border-top: 1px solid #E6E6E6;
 }
-#app .body .list-work .btn-delete {
-    color: #d9534f;
-}
-#app .body .list-work .btn-delete:hover {
-    opacity: .8;
-}
 
 #app .body .action-add input {
-    flex-grow: 1;
-    font-family: GoogleSans-Regular;
     color: #989898
 }
 #app .body .action-add input::placeholder {
@@ -160,19 +131,19 @@ body {
     border-collapse: collapse;
     width: 100%;
 }
-table th {
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ddd;
-}
-table td {
-    border: 1px solid #ddd;
-    padding: 15px;
-}
-table tr:nth-child(even){
-    background-color: #f2f2f2;
-}
 
-table tr:hover {
-    background-color: #ddd;
+.item {
+    background: #FFFFFF;
+    padding: 10px;
+    border-radius: 6px;;
+}
+.item:not(:first-child) {
+    margin-top: 20px;
+    margin-top: 20px;
+}
+.item >*:not(:first-child) {
+    margin-top: 10px;
+}
+.item >.time {
+    color: #b5b5b5;
 }
