@@ -7,25 +7,26 @@ let deleteBtnElement = document.querySelector('.btn-delete');
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.forms["formWork"];
     renderItem();
-    // form.addEventListener('submit', function(e) {
-    //     e.preventDefault();
-    //     addItem();
-    //     renderItem();
-    //     console.clear();
-    //     console.log(listWork);
-    // });
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        addItem();
+        renderItem();
+        console.clear();
+        console.log(listWork);
+        form.reset();
+    });
 });
 
 const addItem = () => {
-    let valueInputElement = document.querySelector('.action-add input').value;
-    if(valueInputElement != '') {
+    let titleWork = document.querySelector('.action-add input').value;
+    if(titleWork != '') {
         objectNew = {};
         objectNew.id = randomId();
-        objectNew.title = valueInputElement;
+        objectNew.title = titleWork;
         listWork.push(objectNew);
-        iNotification('success', 'Thêm thành công');
+        mNotification.success('Thêm thành công');
     }else {
-        iNotification('error', 'Bạn chưa nhập công việc');
+        mNotification.error('Bạn chưa nhập công việc');
     }
 };
 
@@ -33,13 +34,13 @@ const removeItem = (id) => {
     const index = listWork.findIndex(item => item.id === id);
     listWork.splice(index, 1);
     renderItem();
-    iNotification('success', 'Xoá thành công');
+    mNotification.success('Xoá thành công');
 };
 
 const clearAll = () => {
     listWork = [];
     renderItem();
-    iNotification('success', 'Xoá tất cả thành công');
+    mNotification.success('Xoá tất cả thành công');
 }
 
 const renderItem = () => {
@@ -47,16 +48,23 @@ const renderItem = () => {
         listWorkElement.innerHTML = '';
         listWork.map(function(v) {
             listWorkElement.innerHTML +=
-                `<li id="${v.id}">
-                    <label>
+                `<tr id="${v.id}">
+                    <td style="text-align: center;">
                         <input type="checkbox">
+                    </td>
+                    <td>
                         <span>${v.title}</span>
-                    </label>
-                    <a href="javascript:;" class="btn-delete" title="Xoá" onClick="removeItem('${v.id}')"><i class="fas fa-trash"></i></a>
-                </li>`;
+                    </td>
+                    <td>
+                        <span>${v.title}</span>
+                    </td>
+                    <td style="text-align: center;">
+                        <a href="javascript:;" class="btn-delete" title="Xoá" onClick="removeItem('${v.id}')"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>`;
         });
     }else {
-        listWorkElement.innerHTML = `<div style="text-align: center;">Chưa có công việc nào</div>`
+        listWorkElement.innerHTML = `<tr style="text-align: center;"><td colspan="5">Chưa có công việc nào</td></tr>`
     }
     
 };

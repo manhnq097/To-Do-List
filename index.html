@@ -12,16 +12,37 @@
 <body>
     <div id="app">
         <div class="heading">
-            <h1>Công việc</h1>
+            <h1>Ứng dụng quản lý công việc</h1>
         </div>
         <div class="body">
-            <div class="action-add" name="formWork">
-                <a href="javascrip:;" class="btn-add" title="Thêm công việc" onclick="showPopup('Layout/test.html')"><i class="fas fa-plus"></i></a>
-                <input type="text" placeholder="Nhập công việc" name="workName"/>
+            <div class="form-add">
+                <div class="">
+                    
+                </div>
+                <div>
+                    <form class="action-add" name="formWork">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Công việc" name="workName"/>
+                            <input type="text" class="form-control" placeholder="Mô tả công việc" name="workName"/>
+                        </div>
+                        <div style="text-align: right; padding-top: 10px;"><button type="submit" class="btn btn-add"><i class="fas fa-plus"></i><span style="margin-left: 5px;">Thêm mới</span></button></div>
+                    </form>
+                </div>
             </div>
-            <ul class="list-work"></ul>
+            <table class="table">
+                <thead>
+                    <th style="width: 50px; text-align: center;">#</th>
+                    <th>Tên công việc</th>
+                    <th>Mô tả công việc</th>
+                    <th style="width: 120px; text-align: center;">Hành động</th>
+                </thead>
+                <tbody class="list-work">
+
+                </tbody>
+            </table>
             <a href="javascript:;" class="clear-all-btn" title="Xoá tất cả" onclick="clearAll();"><i class="fas fa-broom"></i></a>
         </div>
+    </div>
     <script src="./component/getWidthHeight.js"></script>
     <script src="./component/notification.js"></script>
     <script src="./component/popup.js"></script>
